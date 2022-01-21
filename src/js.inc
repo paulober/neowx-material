@@ -6,8 +6,7 @@
 ## jQuery
 <script type="text/javascript" src="js/jquery.min.js"></script>
 ## Bootstrap tooltips / JS
-<script type="text/javascript" src="js/popper.min.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
 ## MDB core JavaScript
 <script type="text/javascript" src="js/mdb.min.js"></script>
 ## Vendor JS
@@ -18,8 +17,9 @@
 <script type="text/javascript">moment.locale('$Extras.language')</script>
 #end if
 <script src="js/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="js/vendor/mqttws31.min.js" type="text/javascript"></script>
 ## NeoWX Material App
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/app.min.js"></script>
 
 ## Global apexcharts config
 <script type="text/javascript">

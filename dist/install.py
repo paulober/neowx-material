@@ -8,20 +8,22 @@ def loader():
 class BasicInstaller(ExtensionInstaller):
     def __init__(self):
         super(BasicInstaller, self).__init__(
-            version="1.11",
+            version="2.1",
             name='neowx-material',
-            description='The most versatile and modern weewx skin',
-            author="Neoground GmbH",
-            author_email="weather@neoground.com",
+            description='The most versatile and modern weewx skin - based on Neowx-material Neoground GmbH',
+            author="paulober",
+            author_email="opensource@paulober.eu",
             config={
                 'StdReport': {
-                    'StandardReport': {
-                        'skin':'neowx-material'
+                    'NeowxMaterial': {
+                        'skin':'neowx-material',
+                        'HTML_ROOT':'/var/weewx/reports/po-neowx-material'
                     }
                 }
             },
             files=[('skins/neowx-material',
-                    ['skins/neowx-material/almanac.html.tmpl',
+                    ['skins/neowx-material/about.html.tmpl'
+                    'skins/neowx-material/almanac.html.tmpl',
                     'skins/neowx-material/archive.html.tmpl',
                     'skins/neowx-material/footer.inc',
                     'skins/neowx-material/graph_area_archive_config.inc',
@@ -32,6 +34,7 @@ class BasicInstaller(ExtensionInstaller):
                     'skins/neowx-material/head.inc',
                     'skins/neowx-material/header.inc',
                     'skins/neowx-material/index.html.tmpl',
+                    'skins/neowx-material/install.html.tmpl',
                     'skins/neowx-material/js.inc',
                     'skins/neowx-material/manifest.json',
                     'skins/neowx-material/month-%Y-%m.html.tmpl',
@@ -45,6 +48,7 @@ class BasicInstaller(ExtensionInstaller):
                     'skins/neowx-material/archive/NOAA-%Y.txt.tmpl',
                     'skins/neowx-material/archive/NOAA-%Y-%m.txt.tmpl',
                     'skins/neowx-material/css/bootstrap.min.css',
+                    'skins/neowx-material/css/bootstrap.min.css.map',
                     'skins/neowx-material/css/style.min.css',
                     'skins/neowx-material/fonts/OFL.txt',
                     'skins/neowx-material/fonts/Rubik-Light.eot',
@@ -91,13 +95,16 @@ class BasicInstaller(ExtensionInstaller):
                     'skins/neowx-material/img/splash/splash_2688x1242.png',
                     'skins/neowx-material/img/splash/splash_2732x2048.png',
                     'skins/neowx-material/js/app.js',
-                    'skins/neowx-material/js/bootstrap.min.js',
+                    'skins/neowx-material/js/bootstrap.bundle.min.js',
+                    'skins/neowx-material/js/bootstrap.bundle.min.js.map',
                     'skins/neowx-material/js/jquery.min.js',
+                    'skins/neowx-material/js/jquery.js.map',
                     'skins/neowx-material/js/mdb.min.js',
-                    'skins/neowx-material/js/popper.min.js',
+                    'skins/neowx-material/js/mdb.min.js.map',
                     'skins/neowx-material/js/modules/wow.min.js',
                     'skins/neowx-material/js/vendor/moment.min.js',
                     'skins/neowx-material/js/vendor/moment-with-locales.min.js',
+                    'skins/neowx-material/js/vendor/mqttws31.js',
                     'skins/neowx-material/js/vendor/apexcharts/apexcharts.min.js',
                     'skins/neowx-material/js/vendor/apexcharts/locales/ca.json',
                     'skins/neowx-material/js/vendor/apexcharts/locales/cs.json',

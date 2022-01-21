@@ -1,4 +1,7 @@
 .idea
 /src/node_modules/
+/src/about.html.tmpl
+dist/skins/neowx-material/*
 /dist/skins/neowx-material/
 /dist/*.zip
+*.zip

@@ -1,0 +1,48 @@
+#encoding UTF-8
+## +-------------------------------------------------------------------------+
+## |    about.html.tmpl                  Template file for "about" page      |
+## +-------------------------------------------------------------------------+
+
+#attr $active_nav = 'about'
+
+<!DOCTYPE html>
+<html lang="$Extras.language">
+<head>
+  <title>
+    $Extras.Translations[$Extras.language][$active_nav] | $station.location
+  </title>
+  #include "head.inc"
+</head>
+<body class="${Extras.Appearance.mode}-theme main-bg d-flex flex-column min-vh-100" ontouchstart="">
+
+#include "header.inc"
+
+<main>
+  <div class="container-fluid text-auto-color" style="padding: .5rem 1rem;">
+    <br>
+    <h2>Über uns</h2>
+    <p>Wir sind das P-Seminar Wetterstation vom Ignaz-Kögler Gymnasium Landsberg am Lech.</p>
+    <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+    <p>P-Seminar Wetterstation vom Ignaz-K&ouml;gler Gymnasium Landsberg am Lech<br />
+       Lechstraße 6<br />
+       86899 Landsberg am Lech</p>
+
+    <h2>Kontakt</h2>
+    <!-- TODO: mailto link -->
+    <p>E-Mail: <a href="mailto:seminar@ikg-wetter.de">seminar@ikg-wetter.de</a></p>
+    ##<!--<p>Technik Status:</p>
+    ##<ul>
+    ##    <li>Station hardware: $station.hardware</li>
+    ##    <li>Server uptime: $station.os_uptime</li>
+    ##    <li>WeeWX uptime: $station.uptime</li>
+    ##    <li>WeeWX version: $station.version</li>
+    ##    <li>Belchertown Skin Version: $belchertown_version</li>
+    ##</ul>-->
+  </div>
+</main>
+
+#include "footer.inc"
+#include "js.inc"
+
+</body>
+</html>

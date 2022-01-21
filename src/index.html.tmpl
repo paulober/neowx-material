@@ -13,7 +13,11 @@
     <div class="card">
       <div class="card-body text-center">
         <h3 class="h5-responsive $Extras.color-text">
-          $getVar('obs.label.' + name)
+          #if $name == 'cloudbase'
+            Wolkenuntergrenze
+          #else
+            $getVar('obs.label.' + name)
+          #end if
 
 
           #if $name in $Extras.Appearance.show_trend_on and $getVar('trend.' + name + '.raw') is not None
@@ -48,13 +52,13 @@
             $Extras.Translations[$Extras.language].avg
           </div>
           <div class="col-6">
-            <h4 class="h2-responsive">
+            <h4 class="h2-responsive $name">
               $current.windSpeed $current.windDir.ordinal_compass
             </h4>
           </div>
           <div class="col-3 text-muted font-small hi-text">
             $day.wind.max $day.wind.gustdir.ordinal_compass <br>
-            <i class="wi wi-wind from-$day.wind.gustdir.formatted-deg mr-2"
+            <i class="wi wi-wind from-$day.wind.gustdir.formatted-deg me-2"
                title="$day.wind.gustdir.formatted°" data-toggle="tooltip"></i>
             ($day.wind.maxtime.format($Extras.Formatting.datetime_today))
           </div>
@@ -68,7 +72,7 @@
             $obs.label.rainRate
           </div>
           <div class="col-6">
-            <h4 class="h2-responsive">$day.rain.sum</h4>
+            <h4 class="h2-responsive $name">$day.rain.sum</h4>
           </div>
           <div class="col-3 text-muted font-small hi-text">
             $day.rainRate.max <br>
@@ -84,7 +88,7 @@
             ($getVar('day.' + name + '.mintime').format($Extras.Formatting.datetime_today))
           </div>
           <div class="col-6">
-            <h4 class="h2-responsive">$getVar('current.' + name)</h4>
+            <h4 class="h2-responsive $name">$getVar('current.' + name)</h4>
           </div>
           <div class="col-3 text-muted font-small hi-text">
             $getVar('day.' + name + '.max') <br>
@@ -143,8 +147,14 @@
 #include "header.inc"
 
 <main>
+  <div class="container-fluid px-4">
+    <br/>
+    <div id="live-connection-alert" class="alert alert-warning d-flex align-items-center" role="alert">
+      <i class="bi bi-info-circle-fill"></i>
+      <div class="ms-1">Stelle Live-Verbindung zur Wetterstation her...</div>
+    </div>
+  </div>
   <div class="container-fluid d-flex-xxl">
-
     <div class="row my-4 temprow align-content-start">
       #for $x in $Extras.Appearance.values_order
 
@@ -516,6 +526,8 @@ new ApexCharts(document.querySelector('#$id'), {
   $getChartJsCode("extraHumid8", "extraHumid8chart", "area", "extraHumid8")
   #end if
 
+  // Start live connection
+  mqttConnect();
 </script>
 
 </body>

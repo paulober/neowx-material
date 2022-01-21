@@ -3,10 +3,10 @@
 ## |    footer.inc                       Footer section for all templates    |
 ## +-------------------------------------------------------------------------+
 
-<footer class="page-footer font-small $Extras.color pt-4">
+<footer class="page-footer font-small $Extras.color pt-4 mt-auto">
 
     ## Footer Links
-    <div class="container-fluid text-center text-md-left mb-4">
+    <div class="container-fluid text-center text-md-start mb-4">
 
         ## Grid row
         <div class="row">
@@ -18,10 +18,11 @@
                 <h5 class="text-uppercase">$Extras.Translations[$Extras.language].about</h5>
 
                 <table class="d-inline">
-                    <tr>
-                        <td>$Extras.Translations[$Extras.language].hardware:</td>
-                        <td>$station.hardware</td>
-                    </tr>
+                    ## OUTCOMMENTED!
+                    ##<tr>
+                    ##    <td>$Extras.Translations[$Extras.language].hardware:</td>
+                    ##    <td>$station.hardware</td>
+                    ##</tr>
                     <tr>
                         <td>$Extras.Translations[$Extras.language].altitude:</td>
                         <td>$station.altitude</td>
@@ -112,10 +113,12 @@
 
         #if $Extras.Footer.support_skin == "yes"
           <span class="mx-2">&bull;</span>
-          <a href="https://neoground.com/projects/neowx-material" target="_blank">NeoWX Material</a> skin
+          <a href="https://neoground.com/projects/neowx-material" target="_blank">Original NeoWX Material</a> skin
           #if $Extras.Footer.show_version == "yes"
           v$Extras.version
           #end if
+          <span class="mx-2">&bull;</span>
+          <a href="https://github.com/paulober/neowx-material" target"_blank">NeoWX Material 2.0</a> skin
         #end if
 
         #if $Extras.Footer.imprint_url != ""

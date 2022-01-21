@@ -4,7 +4,7 @@
 ## +-------------------------------------------------------------------------+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
+## Not needed anymore: <meta http-equiv="x-ua-compatible" content="ie=edge">
 
 <meta name="description" content="$Extras.Header.description">
 <meta name="keywords" content="$Extras.Header.keywords">
@@ -15,6 +15,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="application-name" content="$Extras.Translations[$Extras.language].weather | $station.location">
+<meta name="ms.appid" content="IKG Wetter">
 
 ## Pinned Sites
 <meta name="application-name" content="$Extras.Translations[$Extras.language].weather | $station.location">
@@ -42,6 +43,9 @@
 
 ## Bootstrap core CSS
 <link rel="stylesheet" href="css/bootstrap.min.css">
+
+## Bootstrap icons webfont
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
 
 ## MDB + skin style
 <link rel="stylesheet" href="css/style.min.css">

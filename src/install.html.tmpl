@@ -1,0 +1,46 @@
+#encoding UTF-8
+## +-------------------------------------------------------------------------+
+## |    install.html.tmpl                  Template file for "install" page  |
+## +-------------------------------------------------------------------------+
+
+#attr $active_nav = 'install'
+
+<!DOCTYPE html>
+<html lang="$Extras.language">
+<head>
+  <title>
+    $Extras.Translations[$Extras.language][$active_nav] | $station.location
+  </title>
+  #include "head.inc"
+</head>
+<body class="${Extras.Appearance.mode}-theme main-bg d-flex flex-column min-vh-100" ontouchstart="">
+
+#include "header.inc"
+
+<main>
+  <div class="container-fluid text-auto-color" style="padding: .5rem 1rem;">
+    <br>
+    <h3>iPad oder iPhone</h3>
+    <ol>
+        <li>Starten Sie die App "Safari". (Dies funktioniert nicht über die "Chrome"-App.)</li>
+        <li>Geben Sie die URL der Website, zu der Sie eine Verknüpfung erstellen möchten, in das Adressfeld ein. Tippen Sie auf "Los".</li>
+        <li>Tippen Sie auf das Symbol mit dem nach oben zeigenden Pfeil, der aus einem Kasten am unteren/oberen Rand des Safari-Fensters herausragt, um ein Teilen-Menü zu öffnen.</li>
+        <li>Tippen Sie auf "Zum Startbildschirm hinzufügen". Das Dialogfeld "Zum Startbildschirm hinzufügen" wird angezeigt.</li>
+        <li>Geben Sie den Namen für die Verknüpfung über die Bildschirmtastatur ein und tippen Sie auf "Hinzufügen". Safari wird automatisch geschlossen und Sie gelangen zu dem Ort, an dem sich das Symbol auf dem Schreibtisch Ihres iPad befindet.</li>
+    </ol>
+    <br/>
+    <h3>Android</h3>
+    <ol>
+        <li>Starten Sie die App "Chrome".</li>
+        <li>Öffnen Sie die Website oder Webseite, die Sie an Ihren Startbildschirm anheften möchten.</li>
+        <li>Tippen Sie auf das Menüsymbol (3 Punkte in der oberen rechten Ecke) und dann auf Zum Startbildschirm hinzufügen.</li>
+        <li>Sie können einen Namen für die Verknüpfung eingeben und Chrome fügt sie dann Ihrem Startbildschirm hinzu.</li>
+    </ol>
+  </div>
+</main>
+
+#include "footer.inc"
+#include "js.inc"
+
+</body>
+</html>
